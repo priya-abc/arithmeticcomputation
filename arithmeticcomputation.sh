@@ -1,3 +1,22 @@
+#Read the values from Dictionary to Array
+declare -a arr
+for (( i=0; i<4; i++))
+do
+        arr[i]=${resultDict[$i]}
+done
+
+echo
+#Read the values from Dictionary to Array
+declare -a arr
+for (( i=0; i<4; i++))
+do
+
+ arr[i]=${resultDict[$i]}
+done
+
+echo
+#Sort the Computation result in Descending Order
+arrSize=${#arr[@]}
 #!/bin/bash
 echo "welcome to arithmetic computation"
 echo
