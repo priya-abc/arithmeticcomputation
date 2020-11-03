@@ -32,3 +32,36 @@ echo "arithmetic calc" $ari1
 echo "arithmetic calc" $ari2
 echo "arithmetic calc" $ari3
 resultDict[3]=$ari4
+for (( i=0; i<$arrSize-1; i++ ))
+do
+        for (( j=0; j<$arrSize-1-i; j++ ))
+        do
+                if (( ${arr[j]} < ${arr[j+1]} ))
+                then
+                        arr[j]=`expr ${arr[j]} + ${arr[j+1]}`
+                        arr[j+1]=`expr ${arr[j]} - ${arr[j+1]}`
+                        arr[j]=`expr ${arr[j]} - ${arr[j+1]}`
+                fi
+        done
+done
+echo "Computation result in Descending order :"
+echo ${arr[@]}
+
+echo
+#Sort the Computation result in Ascending Order
+for (( i=0; i<$arrSize-1; i++ ))
+do
+        for (( j=0; j<$arrSize-1-i; j++ ))
+        do
+                if (( ${arr[j]} > ${arr[j+1]} ))
+ then
+                        arr[j]=`expr ${arr[j]} + ${arr[j+1]}`
+                        arr[j+1]=`expr ${arr[j]} - ${arr[j+1]}`
+                        arr[j]=`expr ${arr[j]} - ${arr[j+1]}`
+                fi
+        done
+done
+echo "Computation result in Ascending order :"
+echo ${arr[@]}
+
+
